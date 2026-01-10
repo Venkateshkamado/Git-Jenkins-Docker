@@ -15,7 +15,7 @@ stage(run)
 	echo "Running the application"
 	bat 'javac Helloworld.java'
 	bat 'java Helloworld.java'
-	echo "lets see o/p"
+	echo "lets see o/p and check"
 }
 }
 }
