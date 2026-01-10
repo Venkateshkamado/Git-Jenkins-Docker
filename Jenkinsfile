@@ -1,18 +1,18 @@
 pipeline{
 agent any
 stages{
-stage(Build){
+stage("Build"){
 steps
 {
 	echo "Building application"
 }
 }
-stage(test){
+stage("test"){
 steps{
 	echo "testing the application"
 }
 }
-stage(run){
+stage("run"){
 steps{
 	echo "Running the application"
 	bat 'javac Helloworld.java'
