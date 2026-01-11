@@ -22,6 +22,7 @@ steps{
 	echo "lets see o/p and check right or wrong"
 	echo "changed let's see what happens and package it"
 	bat 'jar cf Helloworld.jar Helloworld.class'
+	bat 'dir'
 }
 }
 }
