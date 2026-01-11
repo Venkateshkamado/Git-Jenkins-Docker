@@ -1,3 +1,7 @@
+environment{
+APP_NAME="Helloworld"
+VERSION="1.0-%BUILD_NUMBER%"
+}
 pipeline{
 agent any
 stages{
@@ -21,7 +25,7 @@ stage("Packaging"){
 steps{
 	echo "lets see o/p and check right or wrong"
 	echo "changed let's see what happens and package it"
-	bat 'jar cf Helloworld.jar Helloworld.class'
+	bat 'jar cf %APP_NAME%-%VERSION%.jar Helloworld.class'
 	bat 'dir'
 }
 }
