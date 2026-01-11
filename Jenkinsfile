@@ -9,6 +9,9 @@ steps
 }
 }
 stage("test"){
+when {
+    expression { fileExists('Helloworld.class') }
+}
 steps{
 	echo "testing the application and running it"
 	bat 'java Helloworld.java'
