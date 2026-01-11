@@ -2,7 +2,7 @@ pipeline{
 agent any
 environment{
 APP_NAME="Helloworld"
-VERSION="1.0-%BUILD_NUMBER%"
+VERSION="1.0-${BUILD_NUMBER}"
 }
 stages{
 stage("Build"){
