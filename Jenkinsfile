@@ -1,9 +1,9 @@
+pipeline{
+agent any
 environment{
 APP_NAME="Helloworld"
 VERSION="1.0-%BUILD_NUMBER%"
 }
-pipeline{
-agent any
 stages{
 stage("Build"){
 steps
