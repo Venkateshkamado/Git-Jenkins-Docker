@@ -29,5 +29,10 @@ steps{
 	bat 'dir'
 }
 }
+stage("Archive"){
+steps{
+archiveArtifacts artifacts: '*.jar', fingerprint: true
+}
+}
 }
 }
