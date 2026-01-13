@@ -28,6 +28,7 @@ steps{
 	}
 }
 }
+}
 stage("Packaging"){
 steps{
 	echo "lets see o/p and check right or wrong"
