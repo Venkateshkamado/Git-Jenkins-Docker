@@ -17,8 +17,15 @@ when {
     expression { fileExists('Helloworld.class') }
 }
 steps{
+	script{
 	echo "testing the application and running it"
-	bat 'java Helloworld.java'
+	try{
+		bat 'java Helloworld'
+	}catch(err)
+	{
+	currentBuild.result='FAILURE'
+	error("TEST FAILED")
+	}
 }
 }
 stage("Packaging"){
@@ -34,5 +41,17 @@ steps{
 archiveArtifacts artifacts: '*.jar', fingerprint: true
 }
 }
+}
+post {
+        success {
+            echo "Build succeeded"
+        }
+        failure {
+            echo "Build failed"
+        }
+        always {
+            echo "Cleaning up workspace"
+            cleanWs()
+        }
 }
 }
